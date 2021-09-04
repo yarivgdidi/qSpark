@@ -1,14 +1,9 @@
-import flask
 from flask import Flask, request, jsonify
-import json
 from flask_cors import CORS
-
 from decrypt import guess_key
+
 app = Flask(__name__)
 CORS(app)
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
 
 @app.route("/bruteforce/", methods=['POST'])
 def bruteforce():
